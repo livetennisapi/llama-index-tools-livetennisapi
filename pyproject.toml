@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llama-index-tools-livetennisapi"
+version = "0.1.0"
+description = "llama-index tools Live Tennis API integration — FREE-tier live scores, players, rankings and fixtures"
+authors = [{name = "Live Tennis API", email = "hello@livetennisapi.com"}]
+maintainers = [{name = "Live Tennis API", email = "hello@livetennisapi.com"}]
+requires-python = ">=3.10,<4.0"
+readme = "README.md"
+license = "MIT"
+keywords = ["llama-index", "tennis", "livetennisapi", "tools", "agent", "atp", "wta"]
+dependencies = [
+    "llama-index-core>=0.13.0,<0.15",
+    "httpx>=0.24",
+]
+
+[project.urls]
+Homepage = "https://livetennisapi.com"
+Documentation = "https://docs.livetennisapi.com"
+Repository = "https://github.com/livetennisapi/llama-index-tools-livetennisapi"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.2",
+    "ruff>=0.11",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["llama_index/"]
+exclude = ["**/BUILD"]
+
+[tool.hatch.build.targets.wheel]
+include = ["llama_index/"]
+exclude = ["**/BUILD"]
+
+[tool.llamahub]
+contains_example = false
+import_path = "llama_index.tools.livetennisapi"
+
+[tool.llamahub.class_authors]
+LiveTennisAPIToolSpec = "livetennisapi"
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E501"]
