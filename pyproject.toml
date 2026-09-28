@@ -6,8 +6,8 @@ build-backend = "hatchling.build"
 name = "llama-index-tools-livetennisapi"
 version = "0.1.0"
 description = "llama-index tools Live Tennis API integration — FREE-tier live scores, players, rankings and fixtures"
-authors = [{name = "Live Tennis API", email = "hello@livetennisapi.com"}]
-maintainers = [{name = "Live Tennis API", email = "hello@livetennisapi.com"}]
+authors = [{name = "Synapse Research Ltd", email = "hello@livetennisapi.com"}]
+maintainers = [{name = "Synapse Research Ltd", email = "hello@livetennisapi.com"}]
 requires-python = ">=3.10,<4.0"
 readme = "README.md"
 license = "MIT"
@@ -21,6 +21,7 @@ dependencies = [
 Homepage = "https://livetennisapi.com"
 Documentation = "https://docs.livetennisapi.com"
 Repository = "https://github.com/livetennisapi/llama-index-tools-livetennisapi"
+Author = "https://synapsereality.io"
 
 [project.optional-dependencies]
 dev = [
