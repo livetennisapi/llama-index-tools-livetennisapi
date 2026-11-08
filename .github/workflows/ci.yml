@@ -22,6 +22,12 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
+          # pip's download cache, keyed on pyproject.toml. The install
+          # below pulled ~130 wheels from cold in every leg (18s to 38s,
+          # over 80% of each job). Resolution still runs on every job,
+          # so the cache changes nothing about which versions install.
+          cache: pip
+          cache-dependency-path: pyproject.toml
       - run: pip install -e ".[dev]"
       - name: Unit tests (fully mocked, no network)
         run: pytest -q
